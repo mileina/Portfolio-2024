@@ -1,0 +1,137 @@
+.MainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 50px;
+  background: linear-gradient(180deg, #DF7E0B, #FFC539);
+  height: calc(100vh - 60px);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.intro {
+  max-width: 45%;
+  text-align: left;
+  color: white;
+}
+
+.intro h1, .intro h2 {
+  margin: 0;
+}
+
+.intro h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.intro h2 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: white;
+  margin: 20px 0;
+}
+
+.intro p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.intro button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.intro button:hover {
+  background-color: white;
+  color: #DF7E0B;
+}
+
+.image-container {
+  max-width: 50%;
+  text-align: right;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 0;
+}
+
+.image-container picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.linkedin-logo {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.linkedin-logo img {
+  width: 50px; 
+  height: 50px;
+}
+
+@media (max-width: 768px) {
+  .MainContent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .intro {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 36px;
+  }
+
+  .intro h2 {
+    font-size: 24px;
+  }
+
+  .intro p {
+    font-size: 16px;
+  }
+
+  .intro button {
+    font-size: 14px;
+  }
+
+  .image-container {
+    max-width: 30%;
+    text-align: center;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .image-container img {
+    width: 50%; 
+    height: auto;
+  }
+
+  .linkedin-logo {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .linkedin-logo img {
+    width: 40px; 
+    height: 40px;
+  }
+}

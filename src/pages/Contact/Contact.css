@@ -1,0 +1,51 @@
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1D1D1D;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  text-align: center;
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.contact-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 18px;
+  line-height: 1.6; 
+  margin-bottom: 10px;
+}
+
+.contact-container a {
+  color: #8278D7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-container a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links img.social-logo {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  vertical-align: middle;
+}

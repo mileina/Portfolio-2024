@@ -1,0 +1,303 @@
+.MiniBlog {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(180deg, #D7E8FA, #B7C6EA);
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto; 
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+}
+
+.blog-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.blog-item h3 {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    z-index: 3;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    height: 60%;
+}
+
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.carousel-button.prev {
+    left: -30px;
+}
+
+.carousel-button.next {
+    right: -30px;
+}
+
+.carousel-image {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.competence-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.competence-item.highlight .overlay {
+    background-color: rgba(255, 255, 0, 0.5);
+    animation: fadeInOverlay 0.5s forwards;
+}
+
+.competence-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.competence-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.competence-item .skills-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+    animation: fadeInSkills 1s forwards;
+    pointer-events: none;
+    color: white;
+}
+
+.competence-item .skills-list span {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+    font-size: 14px;
+}
+
+.devweb-item, .webdesign-item, .twitch-item, .cuisine-item, .voyage-item, .brouillon-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.devweb-item.highlight .overlay, 
+.webdesign-item.highlight .overlay, 
+.twitch-item.highlight .overlay, 
+.cuisine-item.highlight .overlay, 
+.voyage-item.highlight .overlay, 
+.brouillon-item.highlight .overlay {
+    background-color: rgba(255, 255, 0, 0.5);
+    animation: fadeInOverlay 0.5s forwards;
+}
+
+.devweb-item .overlay, 
+.webdesign-item .overlay, 
+.twitch-item .overlay, 
+.cuisine-item .overlay, 
+.voyage-item .overlay, 
+.brouillon-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.devweb-item img, 
+.webdesign-item img, 
+.twitch-item img, 
+.cuisine-item img, 
+.voyage-item img, 
+.brouillon-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.devweb-item .devweb-text, 
+.webdesign-item .webdesign-text, 
+.twitch-item .twitch-text, 
+.cuisine-item .cuisine-text, 
+.voyage-item .voyage-text, 
+.brouillon-item .brouillon-carousel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    z-index: 2;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeInSkills 1s forwards;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.devweb-item .devweb-text span, 
+.webdesign-item .webdesign-text span, 
+.twitch-item .twitch-text span, 
+.cuisine-item .cuisine-text span, 
+.voyage-item .voyage-text span, 
+.brouillon-item .brouillon-carousel span {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSkills {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOverlay {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: rgba(255, 255, 0, 0.5);
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .blog-item {
+        width: calc(100% - 15px);
+    }
+
+    .carousel {
+        width: 90%;
+        height: 50%;
+    }
+
+    .carousel-image {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; 
+    }
+
+    .blog-item {
+        width: calc(100% - 20px);
+    }
+
+    .carousel {
+        width: 100%;
+        height: 40%;
+    }
+
+    .carousel-image {
+        max-width: 200px;
+    }
+
+    .carousel-button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .MiniBlog {
+        padding: 20px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-item {
+        padding: 5px;
+    }
+
+    .blog-item h3 {
+        font-size: 12px;
+    }
+
+    .carousel {
+        width: 100%;
+        height: 35%;
+    }
+
+    .carousel-image {
+        max-width: 150px;
+    }
+
+    .carousel-button {
+        font-size: 14px;
+    }
+}
